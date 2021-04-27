@@ -18,6 +18,20 @@ int WINDOWSIZE; // for nearby valid 3D points searching
 float Threshold; // the max allowed depth difference between nearby 3D points 
 ```
 
+## How to read the surface normal value from image
+In our code, for better visualization, we convert the real surface normal (nx, ny, nz) to picture as follows:
+```c++
+// For 3 Channles in saved Image(imgx, imgy, imgz): 
+1st Channel: imgx = (nx + 1) * 255.0 / 2.0
+2nd Channel: imgy = (ny + 1) * 255.0 / 2.0
+3rd Channel: imgz = (nz + 1) * 255.0 / 2.0
+
+// To get the real surface normal from Image:
+nx = imgx * 2.0 / 255.0 -1
+ny = imgy * 2.0 / 255.0 -1
+nz = imgz * 2.0 / 255.0 -1
+```
+
 # Prerequisites
 ## OpenCV
 We use OpenCV to manipulate images and features. Dowload and install instructions can be found at: http://opencv.org. Required at leat 3.0. Tested with OpenCV 4.5.0.
