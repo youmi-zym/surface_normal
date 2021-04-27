@@ -1,5 +1,5 @@
 # Surface Normal
-**Author** [YouminZhang](youmi-zym.github.io)
+**Author** [YouminZhang](https://youmi-zym.github.io/)
 
 This is a toolbox used to compute surface normal from a depth map.
 
